@@ -1,0 +1,329 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Report_Downloading" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Arg_Status" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="Input_config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>970,2323</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Report_Downloading_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="38">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Report_Downloading" sap:VirtualizedContainerService.HintSize="598,2158" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="556,2066" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="518,1839" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="File1" />
+            <Variable x:TypeArguments="x:String" Name="Folder_Path" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="476,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Report Downloading Process Start&quot;]" />
+          <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  ctl00_cph_edp_Ra...'" sap:VirtualizedContainerService.HintSize="476,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4b874d9f-e89c-4ffc-9f43-09e59889f039" InformativeScreenshot="f0763d3bf0ea9b801ed37fa31c55dc47" Selector="&lt;html title='Untitled Page' /&gt;&lt;webctrl tableCol='1' tableRow='2' tag='INPUT' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:Click.Target>
+          </ui:Click>
+          <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  ctl00_cph_edp_bt...'" sap:VirtualizedContainerService.HintSize="476,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8d031e0e-47ca-4bf9-9f3a-d5898fbe1df9" InformativeScreenshot="98d424d655b99c462a1e50b6acf22d3f" Selector="&lt;html title='Untitled Page' /&gt;&lt;webctrl tableCol='1' tableRow='3' tag='INPUT' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:Click.Target>
+          </ui:Click>
+          <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" FolderPath="[Folder_Path]" sap:VirtualizedContainerService.HintSize="476,61" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="MyDocuments" />
+          <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="476,1008" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_8" />
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'UntitledP Page'" sap:VirtualizedContainerService.HintSize="434,623" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="4ebced0f89a1f4522565c054042ecbc0" Selector="&lt;html title='Untitled Page' /&gt;">
+              <ui:BrowserScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,477" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_9" />
+                    <ui:ExtractData DelayBetweenPagesMS="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='text' /&gt;&lt;column name='Column-1' attr='text' /&gt;&lt;column name='Column-2' attr='text' /&gt;&lt;column name='Column-3' attr='text' /&gt;&lt;column name='Column-4' attr='text' /&gt;&lt;column name='Column-5' attr='text' /&gt;&lt;column name='Column-6' attr='text' /&gt;&lt;column name='Column-7' attr='text' /&gt;&lt;column name='Column-8' attr='text' /&gt;&lt;column name='Column-9' attr='text' /&gt;&lt;column name='Column-10' attr='text' /&gt;&lt;column name='Column-11' attr='text' /&gt;&lt;column name='Column-12' attr='text' /&gt;&lt;column name='Column-13' attr='text' /&gt;&lt;column name='Column-14' attr='text' /&gt;&lt;column name='Column-15' attr='text' /&gt;&lt;column name='Column-16' attr='text' /&gt;&lt;column name='Column-17' attr='text' /&gt;&lt;column name='Column-18' attr='text' /&gt;&lt;column name='Column-19' attr='text' /&gt;&lt;column name='Column-20' attr='text' /&gt;&lt;column name='Column-21' attr='text' /&gt;&lt;column name='Column-22' attr='text' /&gt;&lt;column name='Column-23' attr='text' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="10000" NextLinkSelector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='3' tableRow='12' tag='TD' /&gt;" SimulateClick="True">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="355b5cb3-fe64-4987-ad4c-12d4813585ad" InformativeScreenshot="06866aa62bc287d389876dc04174fd26" Selector="&lt;webctrl tag='TABLE' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                    <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_10" />
+                    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[ExtractDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" WorkbookPath="[Folder_Path+Input_config(&quot;Downloaded Report&quot;).ToString]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:BrowserScope.Body>
+            </ui:BrowserScope>
+            <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[Arg_Status]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Report Downloaded Successfully Completed &quot;]" />
+          </Sequence>
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="552,1725" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser IE: Untitled Page" sap:VirtualizedContainerService.HintSize="510,1633" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="ec9c29a3-6839-45b5-8f01-465a82b8b2b4" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1417" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                        <uix:NClick ClickType="Single" DisplayName="Click 'INPUT ctl00_cph_edp_Rad…'" sap:VirtualizedContainerService.HintSize="434,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ec9c29a3-6839-45b5-8f01-465a82b8b2b4" Version="V1">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://app.manappuram.net/manappuram/pledge/mis_reports/outstanding_starting.aspx" DesignTimeRectangle="534, 241, 24, 24" ElementType="RadioButton" FriendlyName="'INPUT ctl00_cph_edp_Rad…'" FullSelectorArgument="&lt;webctrl tableCol='1' tableRow='2' tag='INPUT' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl type='radio' class='' tag='INPUT' aaname='' /&gt;" Guid="424a15c7-27f8-4b75-a4d1-8710601edd7d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFaSURBVEhL7ZS/aoRAEMbzKj6Gpdha+wyWYukDWCSuryCaP4cgJJLAFYJVDNeGQ46AlW1SiFilmeRbNJjLroYLV+UGPjxnZuen48ydvb/u6Jg6ARb1TwD1dkPJzSUx/4Js2ybGfEpWV1Q/Pwrzp1oErO9vyXVdKsuSmqYhGK64hx9x0blRswAcjqKIuq7jhWF93w+/iPsRXz/cCc9DUgDagiccixdFQbquk6IopKoqxXHM/Ygjr94+CetIAeg52gCrqooX3leapjyOvGR1LawjBfj++VfPPc8TAkzT5HHkMcaEdaQATMtojuMIAZqmDRnE80V1pACM5PgGYRgKAQDDDnqD6TeAWZb1rbhhGNS2LY8d9A0wFdMpguV5TkEQUJZlg2c6RRthHSkAwnzv78HU4Od7MLNsswBocZOxZG8vwrPQIgD68V/0eUXPZW2Z6leAv+gEWNSRATv6AMW98x0rcvgAAAAAAElFTkSuQmCC" InformativeScreenshot="70821e13f3ad9b847939b12cb93432a8.png" ScopeSelectorArgument="&lt;html title='Untitled Page' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                        <uix:NClick ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="434,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ec9c29a3-6839-45b5-8f01-465a82b8b2b4" Version="V1">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://app.manappuram.net/manappuram/pledge/mis_reports/outstanding_starting.aspx" DesignTimeRectangle="630, 275, 40, 22" ElementType="Button" FriendlyName="'OK'" FullSelectorArgument="&lt;webctrl tableCol='1' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl type='submit' class='' tag='INPUT' aaname='OK' check:text='OK' /&gt;" Guid="a94ac938-3d5f-48db-951b-40eb1f436ad3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAaCAYAAADMp76xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGCSURBVFhH3ZHfjYJAEIdpxTKkDKnC8GIHag+o0IGKiSUIaGzhhBD8FyN6VnAve/lNsgRFd3i4h+VMvuzM/Ab3E42f7y/RFPBprrBhGFrzVrjX62mJUvjxeGgFK3y/37WCFb7dblrBCud5rhWs8PV6rcV2uxWtVqvANM0i8zzvKVsul5VZ+btUsMKXy4XFdV26dLPZFDPbtmkme2TlHliWRZRnHH8iDBFIv84hA3HUr8L4B949w8EKn89nJYvFgkTW63UlGw6Hot1uU40ce5PJ5ON+HVjh0+mkZDwek0AURZUMwshQI0ct8X2/sl8HVvh4PCqZz+ckEIZhJRsMBvSGUSPHHmr5I3GW9+vACh8OBxZcDrnXeafTEd1ul+ogCGhPZqPRiHqcclYHVni/37PIy2ezWTGDKGayX61WTz3o9/s0w1meq2CFsyyrxXQ6pcsleLsycxznKcOual8FK5ymqVb8P+EkSbSCFY7jWCtY4d1upxWssI58FNaZinATaKCwEL+Z+QCTtRvbuAAAAABJRU5ErkJggg==" InformativeScreenshot="752e805b365aa16d559ac55b4a2d403e.png" ScopeSelectorArgument="&lt;html title='Untitled Page' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                        <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser IE: Untitled Page" sap:VirtualizedContainerService.HintSize="434,745" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" ScopeGuid="38ee8078-d1bb-4f17-81c3-9a5d1c78cc8d" Version="V2">
+                          <uix:NApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,529" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='Column-0'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-1' ReferenceIdx='1' Name='Column-1'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-2' ReferenceIdx='2' Name='Column-2'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-3' ReferenceIdx='3' Name='Column-3'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-4' ReferenceIdx='4' Name='Column-4'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-5' ReferenceIdx='5' Name='Column-5'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-6' ReferenceIdx='6' Name='Column-6'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-7' ReferenceIdx='7' Name='Column-7'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-8' ReferenceIdx='8' Name='Column-8'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-9' ReferenceIdx='9' Name='Column-9'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-10' ReferenceIdx='10' Name='Column-10'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-11' ReferenceIdx='11' Name='Column-11'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-12' ReferenceIdx='12' Name='Column-12'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-13' ReferenceIdx='13' Name='Column-13'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-14' ReferenceIdx='14' Name='Column-14'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-15' ReferenceIdx='15' Name='Column-15'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-16' ReferenceIdx='16' Name='Column-16'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-17' ReferenceIdx='17' Name='Column-17'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-18' ReferenceIdx='18' Name='Column-18'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-19' ReferenceIdx='19' Name='Column-19'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-20' ReferenceIdx='20' Name='Column-20'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-21' ReferenceIdx='21' Name='Column-21'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-22' ReferenceIdx='22' Name='Column-22'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-23' ReferenceIdx='23' Name='Column-23'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='text' /&gt;&lt;column name='Column-1' attr='text' /&gt;&lt;column name='Column-2' attr='text' /&gt;&lt;column name='Column-3' attr='text' /&gt;&lt;column name='Column-4' attr='text' /&gt;&lt;column name='Column-5' attr='text' /&gt;&lt;column name='Column-6' attr='text' /&gt;&lt;column name='Column-7' attr='text' /&gt;&lt;column name='Column-8' attr='text' /&gt;&lt;column name='Column-9' attr='text' /&gt;&lt;column name='Column-10' attr='text' /&gt;&lt;column name='Column-11' attr='text' /&gt;&lt;column name='Column-12' attr='text' /&gt;&lt;column name='Column-13' attr='text' /&gt;&lt;column name='Column-14' attr='text' /&gt;&lt;column name='Column-15' attr='text' /&gt;&lt;column name='Column-16' attr='text' /&gt;&lt;column name='Column-17' attr='text' /&gt;&lt;column name='Column-18' attr='text' /&gt;&lt;column name='Column-19' attr='text' /&gt;&lt;column name='Column-20' attr='text' /&gt;&lt;column name='Column-21' attr='text' /&gt;&lt;column name='Column-22' attr='text' /&gt;&lt;column name='Column-23' attr='text' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="5000" ScopeIdentifier="38ee8078-d1bb-4f17-81c3-9a5d1c78cc8d" Version="V1">
+                                  <uix:NExtractData.NextLink>
+                                    <uix:TargetAnchorable BrowserURL="https://app.manappuram.net/manappuram/pledge/mis_reports/Os_Branch_All.aspx" DesignTimeRectangle="500, 468, 146, 17" ElementType="Cell" FriendlyName="'KANNUR'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='5' tableRow='23' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='' tag='TD' aaname='KANNUR ' /&gt;" Guid="39d41ce7-e639-454d-8e0f-40c63afaa3b7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJYAAAAVCAYAAACkJReUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH6SURBVGhD7Zg7igJBFEXdxKzAeBhwE6bmrsCluBI3MZnrEEwMTAwEERGt4QxceT67289MGd0DRbdVr6pL7rEUe8WYxPl8LqfTqRyPx3I4HMp+vy+73a5st9uy2WzKer0uq9WqLJfLslgsysfku3x+Da6axTI3WCxTBYtlqmCxTBX+Xaxer3dpk8nkpm82m/32RYbD4aVWTKfTxjnz+fxqPTXWiPT7/cvYaDS6quWNQHzGeDy+qlHL65rHqHJiEUaUgXtCUqAR+iRBExrLc6OIEoRrJNawB9bKIGrcKzX0Ac9k3Sy9uU91sQi761PPuAKMAQtCpWUpsliSV1LAX8UC1vCp9TxVxWo6RTIKn2sUQaiPwON4vJecXHmmiDWviMW1TXjTTTWxCITWJItgQYWmEDOan0+1JrGAZ+uEeVUs7b2p3jxG9a9CAlLQGZ0wscWQIctBDRtpEwuooS/WINAzJ1ab6OYx3vLjnYCa5CL8CCLkuigH8Jrwu8SSFFGkNrHYJ2NCYgHrtn0oTDdvEYuJOegcKEiIKEkWC+6JBfTlE4fXWeZcE8UC3kvTHkw3/y4WQakpEMKK/fE/oyhErGOu7mkR5mhtgldNlBnyacO8uCZNz89jEjD2ZylNO1VOLGMslqmCxTJVsFimChbLVMFimSpYLFOFv4s1KD9fwPsyDBiAeQAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;html title='Untitled Page' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                                  </uix:NExtractData.NextLink>
+                                  <uix:NExtractData.Target>
+                                    <uix:TargetAnchorable DesignTimeRectangle="12, 17, 2173, 77934" ElementType="Table" FriendlyName="'TABLE'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="c2bf421d-422d-4316-95cb-e13f49eeca47" InformativeScreenshot="17c18274dd0efd7f04cb6f6400fbba46.png" ScopeSelectorArgument="&lt;html title='Untitled Page' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                                  </uix:NExtractData.Target>
+                                </uix:NExtractData>
+                                <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                                <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[ExtractDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="[&quot;C:\Users\&quot;+Environment.UserName+&quot;\Documents\UiPath\Gold outstanding Basic Staff Norms Report\Input\Downloaded Report.xlsx&quot;]" />
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NApplicationCard.Body>
+                          <uix:NApplicationCard.TargetApp>
+                            <uix:TargetApp Area="0, 129, 1366, 599" BrowserType="IE" IconBase64="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" InformativeScreenshot="2fcef9e9fa274964572b43ad385e97df.png" Selector="&lt;html title='Untitled Page' /&gt;" Url="https://app.manappuram.net/manappuram/pledge/mis_reports/Os_Branch_All.aspx" />
+                          </uix:NApplicationCard.TargetApp>
+                        </uix:NApplicationCard>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="0, 129, 1366, 599" BrowserType="IE" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAn6SURBVFhHtZcJUJPXFsc/Vls79i1QFcIiCtrWpVrtPK1dLD6nRbv42mqt1FoVZQ8i1lqk2lr0uQCibEIB2cUAgggWrEARHKTsCSDKjgQQCEvIRkjyfyfhm+F1lM57M/Y/85/JJPf7fueec++5N8zTFAA9dHwyS/PQdjN6TM6g77lEDBjlodcoT9Nm/JO8xPijLQxjyA5/ehqqzjKYaN24Fv12IRib0Yo+phcPmB5UMd0o1fkhyhgh7jI9mkL9BB8b/b9QIHrs4/+f5h2+scDW7+c9y/x/id0UXpD9Q0Z612DHUals6HWNvNtcLW8wUCqL9aWaHL3WkWijczV+hi7BbxtsCnrTwGEoycgfRYxoJMzAjQKYyb7yfxOB357veyP1jdCyepecGlFI8c9KQW2EWq24ArXiCFR9dlCV6wmVaYZVIac3F6928ota5eD86WeGhgsJZk3mkC0UuUbBmmwmmT7PJeuzr59eNt/emEPwqHdialtdq4el5+81Iu9uBFTyTECTBCgcQekGbjC4m7FRGJydCPdbjVif3iJZ9mNBu5UXL2a+R5I5wfTIBv28Gfa4xWTRZyuyEYt5sgi+Yv6Rmze3FPYO+vcD8a18VFWH0VrLJ4cAQyuACgaaRH3kZHog4NfbONYkgtcDJXZUj+H9wiG8GMofsPTOKLD0urJE+05x3qylmkK9MIJrgzLWgZ4kLXzh0YI7u2tHxedGAV5bDVoF5wh8g+wPdJsABQweJc9EdJo//l1eh6BBJfxFwOFegNuuxld1MnxQPIxFkfdHLblplfMP8JYqS59fNZFv6EpwU7IBi/u9CG5OM8/fXTsmDhcDmW2/obuZZqyb+TdAizGQy6D5sjUCsxJwmt+OC30KBIvUCKJgT1EQvhSEZ7sKO+rk2Fg0BNvwxlFrr9TCzLQNr43wjNf84eyp5hHbbvcOhoxocLWtAgNtWvhNqjkXaKJ6ZzMoi7FVvOsf98B6P6/S6sDVilWnbjVuSxMIf2yRKANEGpykIL7tAVybVfi8Wor1+QOwOV02aO2ZFF7tbzz9DiD4O+vjBe2nh9TgddVD2BRI8FsEdwfuETyTQdYZy4FVX0f5WPtcXcg+xlh5py+08k7ba7U/rfjzzPt9ZwY1OE5BHOwG9jQpsLl0FP/I6IHtoevtdu5Rb7GPPa55h3NTPQQSeWJ3G5rrThG8gHxwEp7BgHfGTrj4YIIFO/wxWXrxZtOCu76/vE9yegj47hHg0abCdloP62+KYBNcI7F0i0tlh/9eBF+xLrKyObjrESoqztCstTU/QTU31KU9L2yx1NbnigM7fFpZclPt7UNut53q1+AEZeFAtxq7GhT4oHQEK64IscCL12yxL+ZldviU5n2T47q7oHsoryEbalUGwS8CXX/VLbiOlL9jnV9Eg5XP1b+xw6eVpedlI+v9qbUBjyZwZnhyLbg8GMfHv41hdVYf7I780m/hHLuHHT4lCiD83N1fldL2C9Co04CBBVR+BgOxMxBTnIK1oeWyF7/LqbHyzqikmldSvass9/OqKeVa19DMawheo4W/FlA6HtivQhDtIm0ZXKkM22qkWJc3gHlnKyXmzrEhLHZKdt9k5VeUHteo5LmA5F3QIQJ5jD4Srp9C7MgoEjRAnBqIVZGVjzua/JMCiFFoECXVIIS2pDaAYwO0DqgvbOfTOrglwoKwe+Pm+2JyWOyUNp+NrpINxlJv9wXqadHFMEhP90Rk3wASCZ6kNRXmMbO/JVBgWseNa4OgAkqBwJHJADw7JgP4pzaAyBaV+d7oEhY7peISp0GZKAaqzrm6ut+9tBjBfAESJjS62f9RANoAdQFMTAagzUS4BAigNeCnzYB2J9RKqB+IqCk1qcycoopZ7KS6+QeWiofXKmT926Aq0cNQtBGCMyMQOSpHHL00ngBvhFXKX/K7LtDVXFtv7mVdzS08UsjJtRbuSeTEOo5bQh3HNZ6vs0ucgON8SUA1r6e019PMGwjeYLb7oheLnrzJPORvC5IMLpZJ75lClaKHyCR3+FY0IkSqQgxlIFqmxiLfawIL7hUT9rGnJ/SfeLazyb5R2vHMqPTOTE1xtA24RVU40tRHvX0CkbSofpKq8VZoSYuFx+U32ceentSdDmsw+oJw4r5B/1jac+oDVyKwu6YPh1qGcZJOuAtjakRSJrhlwlGOW3IKxz35D89xjsul5Rzn2Ivm+2LTzPbGFFHKq+buutgw58uwRtPt52/P/uJ89Jwd55exwxlG83DVXvTq7mzC4mBz4br4EuXWsl54No3gaI8CZ0dVCKMMhA1PYFN8ZbeZa+LX5m6JT7zNUL2XErjEKff+2HfNMhxtU8D3gRzedWI4lQzi9QtVcoJfYodPCn2cE2inAG4ywnCfxaFLj1/rfa+oBzv5QzjYIcGP/UoEilUIpUwE9ys0DrHl3WbO8cnkdWYucabmznEzzPcR2Dl2P8246surgmEt+FvtOUDb74sGGTb8SveClG5Yuab0zvni3PsselLoeTacjlkhbb1WLkd/vdWe8OQV8Q2SD0v7sYs/QkHI4D84QXtajQtiNUKpLNzSLvGawF865ntfbuS4xjW8ciyr5ZPEyoGjfJHqaOe47lLiRs3HUaDAhttivJzeA5PD+SOzHYOSWeyU0GMciQZGqM7Qz92qz6xZbr9viQU3rWQlr1nxYekgvmoYhXenHMeot58cVuMsBRI4rEJgP5WnS4ZTnRKcbJPi+04l/HrVOERwl04NttMBtOHOGJZlDuD5H+5KTT8L+G329gArFjsltM08SZ1PqEw1iN+ix7xKt5W/0B5fyeFm1L2a1iJ3uCOCI18Ml3Y5fIRK6u0q/EC3n+PaM5+1H6X7EJnbo8GuVhU+5SuwvkSMJdmP8PyJMonJJ2cbCL6aRf5eqhoTR20AqmsG6QR/hTxL+z01mJVm7smlSy7Vj24oEeGjajG+bJTBqW0crp0T8OhWkdVw6VLDSVvrFhW21I/DoUKG1wtHYMfrhalvwajp1sBKgr+mgz1JDVEmcyiAVvrT8OD4Cv212gywPzE23JS5Fm6JCS/53+xeld4uty8bwcbKMXxEF4x/8aX4mC/HZoEcm6plsC+TYnXhMF661g/zEMG4pQfv0RzHoIzZnwfYsK97sghoIM4x3olipkudq5/TGGy8oSNuBmeiZNYaTfnMTagwWraIG/UetdVca5+0tsXBZaLlvDb58oyO8ZV0y1l+YxCLEtsn5l+sl9v4/TxkuS/+Ia30nNmOgVsJ/uSb73+LAtD+aXim/Htj+4lsg0uafL0CFOllaooMQuWZhjtveRra7pipp2s+HOeYl2mfu1NfT7HmphSY7Ymkvh7ROPersNy5O0MSaI97Enz6dE8nNghj8gvkeawtydPf3/8MEUz3F4psqP3Mfv0niWH+A97GAIHbLcG+AAAAAElFTkSuQmCC" InformativeScreenshot="2c499c73496c60e7f34b9ab032d281fa.png" Selector="&lt;html title='Untitled Page' /&gt;" Url="https://app.manappuram.net/manappuram/pledge/mis_reports/outstanding_starting.aspx" />
+                  </uix:NApplicationCard.TargetApp>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NApplicationCard>
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="522,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,280" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[Arg_Status]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[exception.Message]" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

@@ -1,0 +1,298 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Logout" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="985,2103" sap2010:WorkflowViewState.IdRef="Logout_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="36">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Logout" sap:VirtualizedContainerService.HintSize="995,2038" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="953,1946" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="915,1719" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="873,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Logout Process Start&quot;]" />
+          <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser IE: Untitled Page" sap:VirtualizedContainerService.HintSize="873,1496" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="002210f5-f91e-471a-97c4-a066dda50339" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,1280" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="Closed" />
+                    <Variable x:TypeArguments="x:Boolean" Name="Close_tab" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Close Tab (Ctrl+W)'" sap:VirtualizedContainerService.HintSize="797,156" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="002210f5-f91e-471a-97c4-a066dda50339" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="390, 66, 16, 16" ElementType="Button" FriendlyName="'Close Tab (Ctrl+W)'" FullSelectorArgument="&lt;wnd cls='DirectUIHWND' /&gt;&lt;ctrl name='Tab Row' role='page tab list' /&gt;&lt;ctrl name='Untitled Page' role='page tab' /&gt;&lt;ctrl name='Close Tab (Ctrl+W)' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='DirectUIHWND' /&gt;&lt;ctrl name='Tab Row' role='page tab list' /&gt;&lt;ctrl name='Untitled Page' role='page tab' /&gt;&lt;ctrl name='Close Tab (Ctrl+W)' role='push button' automationid='' check:text='Close Tab (Ctrl+W)' /&gt;" Guid="b3af8df3-f332-459f-80f8-cb0f9c610f32" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADNSURBVDhPY3Bzc/t/480fsvH+83f/989c+N/D0/M/yCyKDYThaQtXUtdAkEupaiAID3EDV+04+n/uyi3/Lz/7BhcDsUFiIDlktTCM10CQxgmzFsMNhRkGE8OmB6+B6AYgs5FdjYzxGgjCyIYSMgyE6WsgsmEgGpmNy1C8BqIbgG4BNj14DaR6siEH085AUEmBTQEpGKW0mTJvGVZFpOCFa7dDDASVtN7ePv9nL1v///zDD1gV48MXn3wGG+br5w8xcOLsxWAGNXB1U8d/AKI0PvUOf9gvAAAAAElFTkSuQmCC" InformativeScreenshot="d75226ac6319b52d78fa501e7a662179.png" ScopeSelectorArgument="&lt;wnd app='iexplore.exe' cls='IEFrame' title='Untitled Page - Internet Explorer' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State 'Manappuram Finance'" EnableIfExists="False" EnableIfNotExists="False" Exists="[Closed]" sap:VirtualizedContainerService.HintSize="797,176" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="002210f5-f91e-471a-97c4-a066dda50339" Version="V1">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="http://app.manappuram.net/portal/Home.aspx" DesignTimeRectangle="504, 124, 341, 18" FriendlyName="'Manappuram Finance'" FullSelectorArgument="&lt;webctrl tableCol='1' tableRow='2' tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='B' aaname='Manappuram Finance Limited :- A.O.VALAPAD' check:innerText='Manappuram Finance Limited :- A.O.VALAPAD' /&gt;" Guid="9d6f7f2a-8c80-4818-98d5-4f341745ca36" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVkAAAAWCAYAAABqi+/WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAbcSURBVHhe7ZfLbVxHEEUZilJRJopEcAjea+MQvNTOEXipnSNQEjSuwSMc3ql+b0jNCB6gD9Dg6199bnU3yafnzWaz2dyN/chuNpvNHdmP7Gaz2dyR/chuNpvNHdmP7Gaz2dyRH4/sP1+/Pv/29PSqTfz1+fOrNb9/+PAys7kV3799e6Xx1ND97y9f/uunLo9I8ujc/vj48WX2NZzRPz99ehl5H7fWLPGcxX5LiP+tTHf8zA6+3Jyjc1+9BVm/qtlb6t/E5mrtZJd2ZB+Ncgcb5zq1aU+4UDgBsCkCN2fzm9vhopo8DhxofumtDvEj4IucQ76CdddewhUrzX7m0aVWPxvbNXAH33L/iK8fwoylHeXux3k6Z5lf5e0/GFZcW/+GPavHzXbBj+8EOq30cD6s8dikz4WnLCKQFi7GCCLtLUXevB1r3UzFfFTee8luCRflvVCrez+yvtDX+uKXSlr2Gz+gR9q/9yza9+q9eE/9vWf1IHoNON8pHub6lxFYf/u1r7Y7PrKromT8LMjN7ZgO9tGBflR8QK+9ZLemdX4r1Orej2zuoM/FNXqxdhXb2Xw4uverRy4kVv5oWz1c76l/7CZe9k3YLhzlkb617fmwemQD463j+MiGydDZI8v4NN/jfNu+E6AhetYxZiHS+EXg8V4D9h0xnA/i9Jj7PU8jht7ruOPb/tF6hXMI2esCTrYyz1jnavxvU5rr4LmjeD3HWrAOq8sFtpN9E61rsD6x4biDtcDulA/9Hg+22bH1nvxsnc01a86IDd8TxzpxzdrWbQXrHH/05Ow30SvzvgNTfa+pv4m/2PS+fDeeB3LIzwZ92DPVyXr6zoSVjheq4ig/s5hgkjwNQ06M9RnzGvBY1k5ruBSZQyCLwTxjThhIFIHwYzvEyhoOgUX1wcg4/YAPin20N98udnw77nyvIE43+wmsyU9gLTnTjxaB+PJzisVj8TetISfbwB9zxJTxjttYH2KcIG7bohZpiSNztjXtsWbZwxlJMx7DDvnjl3hZe5Qnfo/WHBFf0So4zyOcm8+IsYZHoEEaOmRsBf44H2lTDNfWH+IT/+ybNLVdtymG2CMX6pSGH3AunfuqJheqEoCLk+9pnII3XgM9Nq0xCMTFDSTh5DggxNL9kH5afAZEpDCx535gzP4njvYy5mIHF6qLaFzsEDv2E1hDfQJ7yLf7Zoqlx6Y16DzZTIyZowb02dtYn8keTFp3vfGFHtOe1iw+008DYmIf/dhjvc8GNu3n1rjG1ozcJ1w77zdoeHbWbSs6pH/k2/6oS1rjXI7qD7aL7ml9vmz3DPIJPg8ZN62BWeV44d0JIH7GGHcAk8BxzHzaFPjUNxbO8yTh5HqsL13oMexzIYiZfpjGGnyn+YD23i62C9UHw1gHoA7AGo+zhwPbfXBcnu/4pnjpt82A3t2mtcFxrNaEqSZdW2qCHtOe1iw+008D9nXLHuJ1zbFpP2e0/mmr8+AadDvziUarddhBjyPQNzaj0YqVfmnUCq6tf5g0o3U8XnuG7bi5xsF1aH+Mt84X3i20hSJ5H0iLxXj2ew2HxmNTPyBK/E4CUWAnxxix9KULjMVnIC/E6H6YxoC5+ODbxei9nYsLtbpUgYvLvgnWuG7sId/u4z/xOZaeT8t39wOaJtcmdldzE9aHGAy5ta6h643voz2tWXymnwbE5LrCtB6b9nNLkkdrg8806jJhfXvd0dyE16PfxKQD+3rONo/qHya7nIGule0ekXVphnPTMfku+Hz7TLStC+9OCIMOfmXMhz2NNRTO+6Z+oJ85JwkROH2EdsJAHOSBH+fQF6/thl4D9plvDvqRfesR2sYKbLNvgjWuG3uS+9Qn38TpOjDf8U3xuj6Mka/nIPGxrrE+xADZ13ZdE5+7QG7oMe1pzaxBYswe54ztrMtcYI54icN+GvwerZmIj2mPY2TeY9YS3z6nU44htjKGPg17bN9kn+2Bz4Xn872yGVvklv3ob7zf8x5fEQ2siWHvSjP7YmzS7If3JMfCNERIgmxEfDcCyBrG/M08/bS2g4get42e7/1JHOJvWtN4zmsjXGvRhcVHWufdez2f1nG5gOBCunUcPkRp6bf9SYfY8bzzCe7nu/vQufmC2Eca56mx7VWbdI399n+mdfZMmgXWOr+uQ9bANMd31wmIz3bO6Hg5661HWmJ3XK5HmM6V8wVySbwTGZ/2BevgPLs2adHp2vp7v333OUsjvh7vurSG6DXplDbl4LZiPfM/hAKuDnFA3NWl3mw2m1/JfmQ3m83mjjzMI9v/FuRP96b/nD96jDebzeZX8FB/yW42m82jsR/ZzWazuSP7kd1sNpu78fz8L2j5ba3YdzAbAAAAAElFTkSuQmCC" InformativeScreenshot="d28678e815239eab70117cadb4fb937d.png" ScopeSelectorArgument="&lt;html title='::Manappuram Application Portal::A.O.VALAPAD' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <If Condition="[Closed=True]" sap:VirtualizedContainerService.HintSize="797,530" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,381" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Logout'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="002210f5-f91e-471a-97c4-a066dda50339" Version="V1">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="http://app.manappuram.net/portal/Home.aspx" DesignTimeRectangle="1291, 142, 56, 23" ElementType="Text" FriendlyName="'Logout'" FullSelectorArgument="&lt;webctrl tableCol='1' tableRow='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='A' aaname='Logout' check:innerText='Logout' /&gt;" Guid="a235cd78-940c-4f60-b8d3-235f52378e9b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADwAAAAbCAYAAAAgVez8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFESURBVFhH7ZQxDoJQEES5k7W3seYilp7C0iNYWdFY2tlbcAPMM0xc1pVPgQQ/TDL54ux+Zv4CRbMQ1HXdVFXVLDfwpiiy5ho4KsqJa+CoKCeugX3BbrttlTeul8tH3b9w8IQJWT8eofZPzC4wPnkqIw1mFXhflq8MkwbWTYXj4dDRz6dTq3Qhk9/6WQVq7bcFzergfrt17iuOGlhmdS0T3rTCsSdQfao/miDo0z1HDcypMkH7n+1Ds3t4g6n+2QVG94b1CPMbIwBj0uyeqf7ZBEZjRffvjg+lAII1l+qfRWAM6oaswE6JHmtIhxNxSD9g5doeHjU2sN3DMhmY5hTsicq0ILORJtip9vVDagUFtjWC7xMHT3gMMgFNxxJzfY/hmJw0MIgC+/f2l5x8whGi2l9x0sBz4Bo4KsqJH4Fzx0IDV80TabDrpaXFvEUAAAAASUVORK5CYII=" InformativeScreenshot="1e0705871cc4aef1aaf32488fecc1fd3.png" ScopeSelectorArgument="&lt;html title='::Manappuram Application Portal::A.O.VALAPAD' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Click on Logout&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,185" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Element not found&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="797,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,268" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NCheckState DisplayName="Check App State 'IMG http://app.manappur…'" EnableIfExists="False" EnableIfNotExists="False" Exists="[Close_tab]" sap:VirtualizedContainerService.HintSize="334,176" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="002210f5-f91e-471a-97c4-a066dda50339" Version="V1">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="http://app.manappuram.net/portal/Login.aspx" DesignTimeRectangle="0, 0, 422, 122" ElementType="Icon" FriendlyName="'IMG http://app.manappur…'" FullSelectorArgument="&lt;webctrl tableCol='1' tableRow='1' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='IMG' aaname='' /&gt;" Guid="a9c2e013-e6bf-412c-992b-d763dab0746c" ImageBase64="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" InformativeScreenshot="0570f3ba08b972d9ac18f427a3b08f15.png" ScopeSelectorArgument="&lt;html title='::Manappuram Application Portal::' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+                          </uix:NCheckState.Target>
+                        </uix:NCheckState>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="797,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If Condition="[Close_tab=True]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,331" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="ui:Browser" Name="iexplorer" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:ImageFound Found="{x:Null}" DisplayName="Image Exists 'iexplore.exe ::Manappur...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+                                <ui:ImageFound.Image>
+                                  <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVEhL7dJRCoAgDMbxjrOLSzewG+Sz9/ACPn2x0DHCaAkSgf+XxoIfpC0Y1ISlCUsmOOwBm/fIOZcNzpl3/K6VCWZgdU7witZdKxN8hfSsv0JnPmONP6Hct7BG+annO3zc5cUYkVICEYHnVl2/mwXuyXx5b5uw9DcYOABHaVxyYtUs0gAAAABJRU5ErkJggg==" />
+                                </ui:ImageFound.Image>
+                                <ui:ImageFound.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="de5145a1-004c-41b8-9c2a-90129a8a7107">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:ImageFound.Target>
+                              </ui:ImageFound>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Click on close&quot;]" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,185" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Close tab not found&quot;]" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="All" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="iexplore" />
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 129, 1366, 599" BrowserType="IE" IconBase64="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" InformativeScreenshot="7d0576db384b39bdcc2055e0745d21f0.png" Selector="&lt;html title='Untitled Page' /&gt;" Url="https://app.manappuram.net/manappuram/pledge/mis_reports/Os_Branch_All.aspx" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="919,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

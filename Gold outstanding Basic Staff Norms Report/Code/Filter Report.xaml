@@ -1,0 +1,448 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Filter_Report" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Arg_Status" Type="InOutArgument(x:Boolean)" />
+    <x:Property Name="Input_config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>706,7044</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Filter_Report_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="31">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Filter_Report" sap:VirtualizedContainerService.HintSize="708,6979" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="Table1" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="666,6887" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="628,6660" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="Folder_Path" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Filter Process Start&quot;]" />
+          <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" FolderPath="[Folder_Path]" sap:VirtualizedContainerService.HintSize="586,61" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="MyDocuments" />
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="586,6336" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[Folder_Path+Input_config(&quot;Downloaded Report&quot;).ToString]">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,6227" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="TB1" />
+                    <Variable x:TypeArguments="ui:GenericValue" Name="row_number" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelInsertDeleteRows DisplayName="Insert/Delete Rows" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="ExcelInsertDeleteRows_1" Mode="Remove" NoRows="6" Position="1" SheetName="Sheet1" />
+                  <ui:ExcelInsertDeleteRows DisplayName="Insert/Delete Rows" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="ExcelInsertDeleteRows_2" Mode="Remove" NoRows="1" Position="2" SheetName="Sheet1" />
+                  <ui:ExcelInsertDeleteColumns DisplayName="Insert/Delete Columns" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="ExcelInsertDeleteColumns_1" Mode="Remove" NoColumns="1" Position="4" SheetName="Sheet1" />
+                  <ui:ExcelInsertDeleteColumns DisplayName="Insert/Delete Columns" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="ExcelInsertDeleteColumns_2" Mode="Remove" NoColumns="1" Position="8" SheetName="Sheet1" />
+                  <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                  <ui:ExcelReadRange AddHeaders="True" DataTable="[TB1]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="510,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_6" SheetName="Sheet1">
+                    <ui:ExcelReadRange.Range>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ui:ExcelReadRange.Range>
+                  </ui:ExcelReadRange>
+                  <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="ui:GenericValue">[row_number]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="ui:GenericValue">[TB1.Rows.Count]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:ExcelInsertDeleteRows DisplayName="Insert/Delete Rows" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="ExcelInsertDeleteRows_4" Mode="Remove" NoRows="5" Position="[row_number+1]" SheetName="Sheet1" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Macro Process Start&quot;]" />
+                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="510,322" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[Folder_Path+Input_config(&quot;Macro&quot;).ToString]">
+                    <ui:ExcelApplicationScope.Body>
+                      <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,213" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:ExecuteMacro ContinueOnError="{x:Null}" MacroOutput="{x:Null}" DisplayName="Execute Macro" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExecuteMacro_1" MacroName="Number" />
+                          <Delay Duration="00:00:30" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ExcelApplicationScope.Body>
+                  </ui:ExcelApplicationScope>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Macro Process Completed&quot;]" />
+                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="510,4709" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" InstanceCachePeriod="3000" WorkbookPath="[Folder_Path+Input_config(&quot;Downloaded Report&quot;).ToString]">
+                    <ui:ExcelApplicationScope.Body>
+                      <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,4600" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="sd:DataTable" Name="Table1" />
+                            <Variable x:TypeArguments="sd:DataTable" Name="Table2" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:ExcelReadRange AddHeaders="True" DataTable="[Table1]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_4" SheetName="Sheet1">
+                            <ui:ExcelReadRange.Range>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:ExcelReadRange.Range>
+                          </ui:ExcelReadRange>
+                          <ui:FilterDataTable DataTable="[Table1]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_10" OutputDataTable="[Table2]" SelectColumnsMode="Keep">
+                            <ui:FilterDataTable.Filters>
+                              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
+                              </scg:List>
+                            </ui:FilterDataTable.Filters>
+                            <ui:FilterDataTable.SelectColumns>
+                              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                <InArgument x:TypeArguments="x:String">["BRANCHID"]</InArgument>
+                                <InArgument x:TypeArguments="x:String">["BRANCH NAME"]</InArgument>
+                                <InArgument x:TypeArguments="x:String">["AREA NAME"]</InArgument>
+                                <InArgument x:TypeArguments="x:String">["REGION NAME"]</InArgument>
+                              </scg:List>
+                            </ui:FilterDataTable.SelectColumns>
+                          </ui:FilterDataTable>
+                          <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[Table2]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Filter Report" WorkbookPath="[Folder_Path+Input_config(&quot;DB_Report&quot;).ToString]" />
+                          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,4054" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[Folder_Path+Input_config(&quot;DB_Report&quot;).ToString]">
+                            <ui:ExcelApplicationScope.Body>
+                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,3945" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                  <Sequence.Variables>
+                                    <Variable x:TypeArguments="sd:DataTable" Name="tb1" />
+                                    <Variable x:TypeArguments="sd:DataTable" Name="dt2" />
+                                    <Variable x:TypeArguments="sd:DataTable" Name="dt3" />
+                                    <Variable x:TypeArguments="sd:DataTable" Name="dt4" />
+                                    <Variable x:TypeArguments="sd:DataTable" Name="dt5" />
+                                    <Variable x:TypeArguments="sd:DataTable" Name="dt6" />
+                                    <Variable x:TypeArguments="ui:GenericValue" Name="Count" />
+                                    <Variable x:TypeArguments="sd:DataTable" Name="countno" />
+                                  </Sequence.Variables>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:ExcelReadRange AddHeaders="True" DataTable="[tb1]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Sheet1">
+                                    <ui:ExcelReadRange.Range>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <Literal x:TypeArguments="x:String" Value="" />
+                                      </InArgument>
+                                    </ui:ExcelReadRange.Range>
+                                  </ui:ExcelReadRange>
+                                  <ui:FilterDataTable DataTable="[tb1]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt2]" SelectColumnsMode="Keep">
+                                    <ui:FilterDataTable.Filters>
+                                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                        <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                                          <ui:FilterOperationArgument.Column>
+                                            <InArgument x:TypeArguments="x:String">["POST"]</InArgument>
+                                          </ui:FilterOperationArgument.Column>
+                                          <ui:FilterOperationArgument.Operand>
+                                            <InArgument x:TypeArguments="x:String" xml:space="preserve">["BRANCH MANAGER  "]</InArgument>
+                                          </ui:FilterOperationArgument.Operand>
+                                        </ui:FilterOperationArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.Filters>
+                                    <ui:FilterDataTable.SelectColumns>
+                                      <scg:List x:TypeArguments="InArgument" Capacity="8">
+                                        <InArgument x:TypeArguments="x:String">["BRANCH_NAME"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["AREA"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["REGION"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["FZM"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["POST"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["BRANCH_ID"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["NORMS"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["SHORTAGE"]</InArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.SelectColumns>
+                                  </ui:FilterDataTable>
+                                  <ui:ExcelWriteRange AddHeaders="True" DataTable="[dt2]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="BH" StartingCell="A1" />
+                                  <ui:FilterDataTable DataTable="[tb1]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" OutputDataTable="[dt3]" SelectColumnsMode="Keep">
+                                    <ui:FilterDataTable.Filters>
+                                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                        <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                                          <ui:FilterOperationArgument.Column>
+                                            <InArgument x:TypeArguments="x:String">["POST"]</InArgument>
+                                          </ui:FilterOperationArgument.Column>
+                                          <ui:FilterOperationArgument.Operand>
+                                            <InArgument x:TypeArguments="x:String">["ASSISTANT BRANCH HEAD"]</InArgument>
+                                          </ui:FilterOperationArgument.Operand>
+                                        </ui:FilterOperationArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.Filters>
+                                    <ui:FilterDataTable.SelectColumns>
+                                      <scg:List x:TypeArguments="InArgument" Capacity="8">
+                                        <InArgument x:TypeArguments="x:String">["BRANCH_NAME"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["AREA"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["REGION"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["FZM"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["POST"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["BRANCH_ID"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["NORMS"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["SHORTAGE"]</InArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.SelectColumns>
+                                  </ui:FilterDataTable>
+                                  <ui:ExcelWriteRange AddHeaders="True" DataTable="[dt3]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="ABH" StartingCell="A1" />
+                                  <ui:FilterDataTable DataTable="[tb1]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_7" OutputDataTable="[dt4]" SelectColumnsMode="Keep">
+                                    <ui:FilterDataTable.Filters>
+                                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                        <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                                          <ui:FilterOperationArgument.Column>
+                                            <InArgument x:TypeArguments="x:String">["POST"]</InArgument>
+                                          </ui:FilterOperationArgument.Column>
+                                          <ui:FilterOperationArgument.Operand>
+                                            <InArgument x:TypeArguments="x:String">["JUNIOR ASSISTANT"]</InArgument>
+                                          </ui:FilterOperationArgument.Operand>
+                                        </ui:FilterOperationArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.Filters>
+                                    <ui:FilterDataTable.SelectColumns>
+                                      <scg:List x:TypeArguments="InArgument" Capacity="8">
+                                        <InArgument x:TypeArguments="x:String">["BRANCH_NAME"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["AREA"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["REGION"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["FZM"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["POST"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["BRANCH_ID"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["NORMS"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["SHORTAGE"]</InArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.SelectColumns>
+                                  </ui:FilterDataTable>
+                                  <ui:ExcelWriteRange AddHeaders="True" DataTable="[dt4]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_3" SheetName="JR.ASST" StartingCell="A1" />
+                                  <ui:FilterDataTable DataTable="[tb1]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_8" OutputDataTable="[dt5]" SelectColumnsMode="Keep">
+                                    <ui:FilterDataTable.Filters>
+                                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                        <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                                          <ui:FilterOperationArgument.Column>
+                                            <InArgument x:TypeArguments="x:String">["POST"]</InArgument>
+                                          </ui:FilterOperationArgument.Column>
+                                          <ui:FilterOperationArgument.Operand>
+                                            <InArgument x:TypeArguments="x:String">["HOUSE KEEPING ASSISTANT"]</InArgument>
+                                          </ui:FilterOperationArgument.Operand>
+                                        </ui:FilterOperationArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.Filters>
+                                    <ui:FilterDataTable.SelectColumns>
+                                      <scg:List x:TypeArguments="InArgument" Capacity="8">
+                                        <InArgument x:TypeArguments="x:String">["BRANCH_NAME"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["AREA"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["REGION"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["FZM"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["POST"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["BRANCH_ID"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["NORMS"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["SHORTAGE"]</InArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.SelectColumns>
+                                  </ui:FilterDataTable>
+                                  <ui:ExcelWriteRange AddHeaders="True" DataTable="[dt5]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_4" SheetName="HKA" StartingCell="A1" />
+                                  <ui:FilterDataTable DataTable="[tb1]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_9" OutputDataTable="[dt6]" SelectColumnsMode="Keep">
+                                    <ui:FilterDataTable.Filters>
+                                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                        <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                                          <ui:FilterOperationArgument.Column>
+                                            <InArgument x:TypeArguments="x:String">["POST"]</InArgument>
+                                          </ui:FilterOperationArgument.Column>
+                                          <ui:FilterOperationArgument.Operand>
+                                            <InArgument x:TypeArguments="x:String">["RELATIONSHIP EXECUTIVE"]</InArgument>
+                                          </ui:FilterOperationArgument.Operand>
+                                        </ui:FilterOperationArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.Filters>
+                                    <ui:FilterDataTable.SelectColumns>
+                                      <scg:List x:TypeArguments="InArgument" Capacity="8">
+                                        <InArgument x:TypeArguments="x:String">["BRANCH_NAME"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["AREA"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["REGION"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["FZM"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["POST"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["BRANCH_ID"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["NORMS"]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">["SHORTAGE"]</InArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.SelectColumns>
+                                  </ui:FilterDataTable>
+                                  <ui:ExcelWriteRange AddHeaders="True" DataTable="[dt6]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_5" SheetName="RELATIONSHIP EXECUTIVE" StartingCell="A1" />
+                                  <ui:ExcelWriteCell Cell="E1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Filter Report" Text="FZM" />
+                                  <ui:ExcelWriteCell Cell="F1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Filter Report" Text="BH" />
+                                  <ui:ExcelWriteCell Cell="G1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Filter Report" Text="ABH" />
+                                  <ui:ExcelWriteCell Cell="H1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Filter Report" Text="JR.ASST" />
+                                  <ui:ExcelWriteCell Cell="I1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Filter Report" Text="HKA" />
+                                  <ui:ExcelWriteCell Cell="J1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Filter Report" Text="RELATIONSHIP EXECUTIVE" />
+                                  <ui:ExcelWriteCell Cell="K1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Filter Report" Text="NORMS" />
+                                  <ui:ExcelWriteCell Cell="L1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Filter Report" Text="BH SHORTAGE" />
+                                  <ui:ExcelWriteCell Cell="M1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Filter Report" Text="ABH SHORTAGE" />
+                                  <ui:ExcelWriteCell Cell="N1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Filter Report" Text="JR.ASST SHORTAGE" />
+                                  <ui:ExcelWriteCell Cell="O1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="Filter Report" Text="HKA SHORTAGE" />
+                                  <ui:ExcelWriteCell Cell="P1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="Filter Report" Text="RELATIONSHIP EXECUTIVE SHORTAGE" />
+                                  <ui:ExcelWriteCell Cell="Q1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_13" SheetName="Filter Report" Text="TOTAL SHORTAGE" />
+                                  <ui:ExcelWriteCell Cell="R1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_14" SheetName="Filter Report" Text="NORMAL STRENGHT" />
+                                  <ui:ExcelWriteCell Cell="S1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_15" SheetName="Filter Report" Text="EXCEPT HKA" />
+                                  <ui:ExcelWriteCell Cell="T1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_16" SheetName="Filter Report" Text="OUTSTANDING" />
+                                  <ui:ExcelWriteCell Cell="U1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_17" SheetName="Filter Report" Text="Gold o/s in KG" />
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:ExcelApplicationScope.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:ExcelApplicationScope>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ExcelApplicationScope.Body>
+                  </ui:ExcelApplicationScope>
+                  <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[Arg_Status]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Filter Process Completed Successfully&quot;]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ExcelApplicationScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="632,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_20">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[Arg_Status]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[exception.Message]" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
