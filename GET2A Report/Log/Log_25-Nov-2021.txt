@@ -1,0 +1,2 @@
+﻿11/25/2021,11:50:55,INFO,InitAllSettings,Gste_Purchase_Recon,DT614632-ROBOT3-Manarobot1-Gste_Purchase_Recon
+11/25/2021,11:50:56,INFO,InitAllSettings,Gste_Purchase_Recon,DT614632-ROBOT3-Manarobot1-Read Config File

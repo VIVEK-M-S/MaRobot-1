@@ -1,0 +1,2 @@
+﻿09/17/2021,12:32:46,INFO,InitAllSettings,Gste_Purchase_Recon,DT611775-352876-352876-Gste_Purchase_Recon
+09/17/2021,12:32:46,INFO,InitAllSettings,Gste_Purchase_Recon,DT611775-352876-352876-Read Config File
